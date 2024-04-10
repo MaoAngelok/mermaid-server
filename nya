@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant User
+    participant System
+    participant Database
+
+    User->>System: Запрос на просмотр каталога товаров
+    System->>Database: Запрос на получение списка товаров
+    Database-->>System: Список товаров
+    System-->>User: Отображение каталога товаров
+
+    User->>System: Выбор товара для просмотра деталей
+    System->>Database: Запрос на получение деталей товара
+    Database-->>System: Детали товара
+    System-->>User: Отображение деталей товара
+
+    User->>System: Добавление товара в корзину
+    System->>Database: Запрос на добавление товара в корзину
+    Database-->>System: Товар добавлен в корзину
+    System-->>User: Подтверждение добавления в корзину
+
+    User->>System: Оформление заказа
+    System->>Database: Запрос на создание заказа
+    Database-->>System: Заказ создан
+    System-->>User: Подтверждение оформления заказа
